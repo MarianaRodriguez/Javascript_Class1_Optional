@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Ejercicios</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      //==============================================================
+      //Ejercicio 1:
+      // Para numeros del uno al 100, imprimir "Estos son los numeros pares:"
+      // seguido de todos los numeros pares. Ahora lo mismo con los impares.
+
+/*
+      var parList = new Array();
+      var imparList = new Array();
+
+      for (var i=1; i<100; i++ ) {
+        if (i%2 == 0) {
+          parList.push(i);
+        } else {
+          imparList.push(i);
+        }
+      }
+
+      console.log("Estos son los números pares: ", parList);
+      console.log("Estos son los números impares: ", imparList);
+*/
+      //==============================================================
+      //Ejercicio 2:
+      // Para este ejercicio tenemos que generar un número al azar. Para eso,
+      // usamos Math.floor(Math.random()*11) (genera un numero al azar entre 0 y 10).
+      // Generar un numero al azar cada vez que ejecutamos.
+      // Para cada numero, dar distintos:
+      // 1, 2, 3: 5 puntos
+      // 4, 5, 6: 10 puntos
+      // 7, 8, 9: 50 puntos
+      // Si sale el numero 0, el jugador perdio. Informarlo con un mensaje en la consola.
+      // Si sale el numero 10, el jugador ganó. Informarlo con un mensaje en la consola.
+/*
+      var numeroAzar = Math.floor(Math.random()*11);
+
+      if (numeroAzar > 0 && numeroAzar < 4) {
+         alert("Tiene 5 puntos! Número generado: " + numeroAzar);
+         console.log("Tiene 5 puntos! Número generado: ", numeroAzar);
+      } else if (numeroAzar > 3 && numeroAzar < 7) {
+        alert("Tiene 10 puntos! Número generado: " + numeroAzar);
+        console.log("Tiene 10 puntos! Número generado: ", numeroAzar);
+      } else if(numeroAzar > 6 && numeroAzar < 10) {
+        alert("Tiene 50 puntos! Número generado: " + numeroAzar);
+        console.log("Tiene 50 puntos! Número generado: ", numeroAzar);
+      } else if (numeroAzar == 0) {
+        console.log("El jugador perdió: ", numeroAzar);
+      } else {
+        console.log("El jugador ganó: ", numeroAzar);
+      }
+*/
+      //==============================================================
+      //Ejercicio 3
+      // Piedra, Papel, o Tijera!
+      // Tenemos que tener un array con las tres opciones
+      // Generar la opcion de la computadora, usando Math.floor(Math.random()*3) (nos va a devolver 0, 1 o 2)
+      // Pedirle al usuario una opción por escrito y fijarnos a que opcion equivale
+      // Checkear si el usuario gano, empato o perdio, y comunicarle con un alert
+
+     var opt = ['piedra', 'papel', 'tijera'];
+     var optAuto = Math.floor(Math.random() * 3);
+     var optUser = prompt('Escoja una opción: Piedra, Papel o Tijera').toLowerCase();
+
+     var optAutoDesc;
+     if (optAuto == 0) {
+       optAutoDesc = "piedra";
+     } else if (optAuto == 1) {
+       optAutoDesc = "papel";
+     } else {
+       optAutoDesc = "tijera";
+     }
+
+     if ((optUser === opt[0] && optAuto == 0) ||
+         (optUser === opt[1] && optAuto == 1) ||
+         (optUser === opt[2] && optAuto == 2)) {
+         alert("Opción del usuario: " + optUser + " Vs. " +
+         "Opción automática: " + optAutoDesc + ". ¡¡¡Empate!!!");
+         console.log('Opción automática:', optAutoDesc);
+         console.log('Opción del usuario:', optUser);
+     } else if ((optUser === opt[0] && optAuto == 1) ||
+         (optUser === opt[1] && optAuto == 2) ||
+         (optUser === opt[2] && optAuto == 0)) {
+         alert("Opción del usuario: " + optUser + " Vs. " +
+         "Opción automática: " + optAutoDesc + ". ¡¡¡Perdió el juego!!!");
+         console.log('Opción automática:', optAutoDesc);
+         console.log('Opción del usuario:', optUser);
+     } else if ((optUser === opt[0] && optAuto == 2) ||
+         (optUser === opt[1] && optAuto == 0) ||
+         (optUser === opt[2] && optAuto == 1)) {
+         alert("Opción del usuario: " + optUser + " Vs. " +
+         "Opción automática: " + optAutoDesc + ". ¡¡¡Ganó el juego!!!");
+         console.log('Opción automática:', optAutoDesc);
+         console.log('Opción del usuario:', optUser);
+     } else {
+         alert('Opción inválida, por favor escoja una opción entre Piedra, Papel o Tijera');
+     }
+
+    </script>
+  </body>
+</html>
